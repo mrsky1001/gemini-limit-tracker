@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Статистика лимитов — Gemini Pro</title>
+<link rel="stylesheet" href="stats.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div>
+        <div class="title">Статистика по аккаунтам</div>
+        <div class="subtitle">Эмпирический интервал считается по фактическим отметкам «лимит кончился», а не по введённым датам — так виден настоящий цикл сброса.</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-secondary" id="clearHistoryBtn">Очистить историю</button>
+      </div>
+    </header>
+    <div id="statsRoot" class="stats-root"></div>
+  </div>
+  <script src="shared/storage.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>
