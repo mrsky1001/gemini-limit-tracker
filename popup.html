@@ -28,6 +28,10 @@
         <label for="sortToggle">Сначала ограниченные (по времени сброса)</label>
         <input type="checkbox" id="sortToggle" />
       </div>
+      <div class="settings-row">
+        <label for="autoClipboardToggle">Автоматически читать буфер обмена при открытии</label>
+        <input type="checkbox" id="autoClipboardToggle" />
+      </div>
       <div class="settings-actions">
         <button class="btn-secondary" id="statsBtn">📊 Статистика</button>
         <button class="btn-secondary" id="exportBtn">⬇ Экспорт JSON</button>
@@ -70,8 +74,25 @@
       <div class="modal-title">Когда сбросится лимит?</div>
       <div class="account-preview" id="periodAccountName"></div>
 
-      <label class="modal-label">Вставьте сообщение от Gemini целиком (необязательно)</label>
+      <div class="modal-label-row">
+        <label class="modal-label" for="pasteMessageInput">Вставьте сообщение от Gemini (или из буфера)</label>
+        <button type="button" class="btn-micro" id="pasteClipboardBtn" title="Вставить из буфера обмена">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+          </svg>
+          <span>Из буфера</span>
+        </button>
+      </div>
       <textarea id="pasteMessageInput" rows="3" placeholder="Your plan's baseline quota will refresh on 9/4/2026, 3:01:35 PM. ..."></textarea>
+
+      <div id="clipboardNotice" class="clipboard-notice hidden">
+        <svg class="notice-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="clipboardNoticeText">Дата распознана и подставлена из буфера</span>
+      </div>
+
       <button class="btn-secondary parse-btn" id="parseMessageBtn">Распознать дату из текста</button>
 
       <label class="modal-label">Точная дата и время сброса</label>

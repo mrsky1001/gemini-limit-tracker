@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Gemini Pro / Antigravity — Учёт лимитов",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Отслеживание лимитов Gemini Pro / Antigravity по нескольким аккаунтам: автоматический таймер сброса, синхронизация между компьютерами, статистика и экспорт/импорт.",
   "action": {
     "default_popup": "popup.html",
@@ -17,7 +17,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage", "notifications", "alarms"],
+  "permissions": ["storage", "notifications", "alarms", "clipboardRead"],
   "background": {
     "service_worker": "background.js"
   }
